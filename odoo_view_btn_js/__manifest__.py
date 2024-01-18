@@ -32,4 +32,12 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'assets':{
+     'web.assets_backend':
+         {
+         },
+     'web.assets_frontend':
+         {
+         },
+     }
 }
