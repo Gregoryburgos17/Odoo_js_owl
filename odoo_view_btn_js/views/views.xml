@@ -42,19 +42,28 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="odoo_view_btn_js" id="odoo_view_btn_js.menu_root"/>
+    <menuitem name="odoo_view_btn_js" 
+    id="odoo_view_btn_js.menu_root"
+    web_icon="odoo_view_btn_js,static/src/img/logo.png"
+    />
+    <record id="action_owl_todo_list_js" model="ir.actions.client">
+        <field name="name">Todo List OWL</field>
+        <field name="tag">odoo_view_btn_js.action_owl_todo_list_js</field>
+    </record>
 
     <!-- menu categories -->
 
     <menuitem name="Menu 1" id="odoo_view_btn_js.menu_1" parent="odoo_view_btn_js.menu_root"/>
     <menuitem name="Menu 2" id="odoo_view_btn_js.menu_2" parent="odoo_view_btn_js.menu_root"/>
-
+    <menuitem name="Menu 3" id="odoo_view_btn_js.menu_3" parent="odoo_view_btn_js.menu_root"/>
     <!-- actions -->
 
     <menuitem name="List" id="odoo_view_btn_js.menu_1_list" parent="odoo_view_btn_js.menu_1"
               action="odoo_view_btn_js.action_window"/>
     <menuitem name="Server to list" id="odoo_view_btn_js" parent="odoo_view_btn_js.menu_2"
               action="odoo_view_btn_js.action_server"/>
+     <menuitem name="List" id="odoo_view_btn_js.menu_2_list" parent="odoo_view_btn_js.menu_3"
+              action="action_owl_todo_list_js"/>
 
   </data>
 </odoo>

@@ -34,10 +34,9 @@
     ],
     'assets':{
      'web.assets_backend':
-         {
-         },
-     'web.assets_frontend':
-         {
-         },
+        [
+            'odoo_view_btn_js/static/src/**/*.js',
+            'odoo_view_btn_js/static/src/**/*.xml'
+        ],
      }
 }
