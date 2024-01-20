@@ -9,7 +9,14 @@ export class Gbcontainer extends Component {
     setup(){
         this.state = useState({
             task:{name:"WORD", value:5},
-            // taskList:[],
+            taskList:[
+                {id:1,name:"task 1"},
+                {id:2,name:"task 2"},
+                {id:3,name:"task 3"},
+                {id:4,name:"task 4"},
+                {id:5,name:"task 5"}
+
+            ],
             // isEdit: false,
             // activeId: false,
         })
