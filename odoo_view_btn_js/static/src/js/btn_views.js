@@ -9,19 +9,23 @@ export class Gbcontainer extends Component {
     setup(){
         this.state = useState({
             task:{name:"WORD", value:5},
-            taskList:[
-                {id:1,name:"task 1"},
-                {id:2,name:"task 2"},
-                {id:3,name:"task 3"},
-                {id:4,name:"task 4"},
-                {id:5,name:"task 5"}
+            taskList:[],
+            isEdit: false,
+            activeId: false,
+        })
+        this.orm = useService("orm")
+        this.model = "odoo_view_btn_js.odoo_view_btn_js"
+        this.searchInput = useRef("search-input")
 
-            ],
-            // isEdit: false,
-            // activeId: false,
+        onWillStart(async ()=>{
+            await this.getAllTasks()
         })
 
     };
+    async getAllTasks(){
+        this.state.taskList = await this.orm.searchRead(this.model, [], ["name", "value"])
+    }
+
 
 }
 Gbcontainer.template = 'odoo_view_btn_js.TodoList'
