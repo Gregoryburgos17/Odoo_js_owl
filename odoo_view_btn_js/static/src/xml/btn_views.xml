@@ -29,17 +29,17 @@
                     <tr t-foreach="state.taskList" t-as="task" t-key="task.id">
                          <td>
                               <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" t-att-id="task.id"/>
-                                  <label class="form-check-label" t-att-for="task.id">
+                                   <input class="form-check-input" type="checkbox" value="" t-att-id="task.id" t-att-checked="task.completed" t-on-click="(e)=>this.toggleTask(e,task)"/>
+                                  <label class="form-check-label" t-att-for="task.id" t-attf-class="#{task.completed and 'text-decoration-line-through'}">
                                     <span t-esc="task.name"/>
                                   </label>
                                 </div>
                           </td>
                           <td>
-                              <input type="number" class="form-control" id="exampleColorInput" t-model="state.task.value" t-att-value="state.task.value"  title="Choose your color" />
+                              <input type="number" class="form-control" id="exampleColorInput" t-model="state.task.value" t-att-value="state.task.value"  title="Choose your color" t-on-click="(e)=>this.updateValue(e,task)"/>
                           </td>
                           <td>
-                              <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button> <button class="btn btn-danger" >Delete</button>
+                              <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal"  t-on-click="()=>this.editTask(task)" >Edit</button> <button class="btn btn-danger" t-on-click="()=>this.deleteTask(task)" >Delete</button>
                           </td>
                     </tr>
 
